@@ -7,7 +7,7 @@ const App = () =>{
         setResult(result.concat(e.target.name));
     }
     const clear = () => {
-        setResult("");
+        setResult("1");
 
     }
     const backspace = () =>{
