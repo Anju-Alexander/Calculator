@@ -1,0 +1,15 @@
+---
+
+- name: pull image and deploy
+  hosts: all
+  become: true
+
+  tasks:
+  - name: pull image
+    docker_container:
+      name: anju_calculator
+      image: anju102/calculator:v1
+      pull: yes
+      state: started
+      ports:
+      - "4000:3000"
