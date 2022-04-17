@@ -4,6 +4,12 @@ import './App.css';
 const App = () =>{
     const [result, setResult] = useState("");
     const handleClick = (e) =>{
+        if(e.target.name == "sq-root")
+        setResult("");
+        else
+        setResult(result.concat(e.target.name));
+    }
+    const SquareRoot = (e) =>{
         setResult(result.concat(e.target.name));
     }
     const clear = () => {
@@ -38,6 +44,10 @@ const App = () =>{
             <div className="keypad">
                 <button className="highlight" onClick={clear} id="clear">Clear</button>
                 <button className="highlight" onClick={backspace} id="backspace">C</button>
+                <button name="sq-root" onClick={handleClick}>&radic;</button>
+                <button name="factorial" onClick={SquareRoot}>!</button>
+                <button name="power" onClick={SquareRoot}>x<sup>y</sup></button>
+                <button name="ln" onClick={SquareRoot}>ln</button>
                 <button name="/" onClick={handleClick}>&divide;</button>
                 <button name="7" onClick={handleClick}>7</button>
                 <button name="8" onClick={handleClick}>8</button>
@@ -53,6 +63,7 @@ const App = () =>{
                 <button name="+" onClick={handleClick}>+</button>
                 <button name="0" onClick={handleClick}>0</button>
                 <button name="." onClick={handleClick}>.</button>
+               
                 <button className="highlight" onClick={calculate} id="result">=</button>
                
             </div>
