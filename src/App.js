@@ -2,75 +2,45 @@ import { clear } from "@testing-library/user-event/dist/clear";
 import React, { useState } from "react";
 import './App.css';
 const App = () =>{
-    const [result, setResult] = useState("");
-    const handleClick = (e) =>{
-        if(e.target.name == "sq-root")
-        setResult("");
-        else
-        setResult(result.concat(e.target.name));
+    
+    const squareRoot = () => {
+        let x = document.getElementById('number').value
+        document.getElementById('result').innerText = "RESULT:"+Math.sqrt(x)
     }
-    const SquareRoot = (e) =>{
-        setResult(result.concat(e.target.name));
+    
+    const factorial = () => {
+        let x = document.getElementById('number').value
+        var y=1;
+        for(let i=1;i<=x;i++)
+         y=y*i;
+         document.getElementById('result').innerText = "RESULT:"+y.toString();
     }
-    const clear = () => {
-        setResult("");
-
+    const naturalLog = () => {
+        let x = document.getElementById('number').value
+        document.getElementById('result').innerText = "RESULT:"+Math.log(x)
     }
-    const backspace = () =>{
-        
-
-        setResult(result.slice(0, -1));
-
+    const power = () => {
+        let x = document.getElementById('number').value
+        let y = document.getElementById('power').value
+        document.getElementById('result').innerText = "RESULT:"+Math.pow(x,y)
     }
-
-    const calculate = () =>{
-
-        try {
-            setResult(eval(result).toString());
-
-        }
-        catch{
-            setResult("");
-
-        }
-        
-    }
+    
     return(
-        <>
-        <div className="container">
-            <form>
-                <input type="text" value={result} />
-            </form>
+        <div>
+            <h1 id="result"></h1>
+            <div className="container">
+            <input type="text" placeholder="Number" id="number"/>
+            <input type="text" placeholder="Power" id="power"/>
             <div className="keypad">
-                <button className="highlight" onClick={clear} id="clear">Clear</button>
-                <button className="highlight" onClick={backspace} id="backspace">C</button>
-                <button name="sq-root" onClick={handleClick}>&radic;</button>
-                <button name="factorial" onClick={SquareRoot}>!</button>
-                <button name="power" onClick={SquareRoot}>x<sup>y</sup></button>
-                <button name="ln" onClick={SquareRoot}>ln</button>
-                <button name="/" onClick={handleClick}>&divide;</button>
-                <button name="7" onClick={handleClick}>7</button>
-                <button name="8" onClick={handleClick}>8</button>
-                <button name="9" onClick={handleClick}>9</button>
-                <button name="*" onClick={handleClick}>&times;</button>
-                <button name="4" onClick={handleClick}>4</button>
-                <button name="5" onClick={handleClick}>5</button>
-                <button name="6" onClick={handleClick}>6</button>
-                <button name="-" onClick={handleClick}>&ndash;</button>
-                <button name="1" onClick={handleClick}>1</button>
-                <button name="2" onClick={handleClick}>2</button>
-                <button name="3" onClick={handleClick}>3</button>
-                <button name="+" onClick={handleClick}>+</button>
-                <button name="0" onClick={handleClick}>0</button>
-                <button name="." onClick={handleClick}>.</button>
-               
-                <button className="highlight" onClick={calculate} id="result">=</button>
-               
-            </div>
+            <button className="highlight" onClick={squareRoot}>SquareRoot</button>
+            <button className="highlight" onClick={factorial}>Factorial</button>
+            <button className="highlight" onClick={naturalLog}>Natural Log</button>
+            <button className="highlight" onClick={power}>Power</button>
+            </div>  
 
         </div>
-        </>
-
+        </div>
+        
     );
 }
 

@@ -12,12 +12,12 @@ body{
 }
 
 .container{
-    top: 50%;
+    top: 20%;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);   
     margin: 0 auto; 
-    width: 256px;
+    width: 600px;
     text-align: center;
     border: 10px solid rgb(12, 6, 6);
     background: rgb(12, 6, 6);
@@ -79,4 +79,8 @@ button:active {
 
 .highlight{
     background: #56cbdb;
+}
+
+.h22{
+    color:black;
 }
