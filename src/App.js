@@ -5,11 +5,13 @@ const App = () =>{
     
     const squareRoot = () => {
         let x = document.getElementById('number').value
+        console.log(new Date().toUTCString()+", "+'Function:SquareRoot, '+'Value:'+x)
         document.getElementById('result').innerText = "RESULT:"+Math.sqrt(x)
     }
     
     const factorial = () => {
         let x = document.getElementById('number').value
+        console.log(new Date().toUTCString()+", "+'Function:Factorial, '+'Value:'+x)
         var y=1;
         for(let i=1;i<=x;i++)
          y=y*i;
@@ -17,10 +19,12 @@ const App = () =>{
     }
     const naturalLog = () => {
         let x = document.getElementById('number').value
+        console.log(new Date().toUTCString()+", "+'Function:NaturalLog, '+'Value:'+x)
         document.getElementById('result').innerText = "RESULT:"+Math.log(x)
     }
     const power = () => {
         let x = document.getElementById('number').value
+        console.log(new Date().toUTCString()+", "+'Function:Power, '+'Value:'+x)
         let y = document.getElementById('power').value
         document.getElementById('result').innerText = "RESULT:"+Math.pow(x,y)
     }
